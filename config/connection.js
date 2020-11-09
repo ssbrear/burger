@@ -3,11 +3,8 @@ const mysql = require("mysql");
 require("dotenv").config();
 
 const connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: process.env.local_pw,
-  database: "burgers_db",
+  "use_env_variable": "JAWSDB_URL",
+  "dialect": "mysql"
 });
 
 // Makes the connection
