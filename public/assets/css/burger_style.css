@@ -1,0 +1,22 @@
+body {
+  background-color: rgb(255, 165, 0);
+}
+header {
+  text-align: center;
+}
+
+img {
+  width: 200px;
+}
+
+.row {
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+  display: inline-block;
+}
+li {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}

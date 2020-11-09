@@ -1,1 +1,38 @@
-<h1>Eat-Da-Burger</h1>
+<header>
+    <h1>Eat-Da-Burger</h1>
+    <img src="/assets/img/burger.png">
+</header>
+<div class="container">
+    <div class="row ">
+        <form id="create-form" class="col align-self-center">
+            <div class="form-group">
+                <ul>
+                    <h3>Available:</h3>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li>
+                        {{this.burger_name}}
+                        <button data-id={{this.id}} type="button" class="btn btn-danger">Devour</button>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+                <ul>
+                    <h3>Devoured:</h1>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li>
+                        {{this.burger_name}}
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="form-group">
+                <input name="burger_name" id="burger_name" class="form-control" type="text">
+                <button class="my-3 btn btn-primary" type="submit">Submit</button>
+            </div>
+            Enter a burger you want to eat, then click the "Submit" button.
+        </form>
+    </div>
+</div>
