@@ -3,9 +3,9 @@ const mysql = require("mysql");
 require("dotenv").config();
 
 if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL)
+  const connection = mysql.createConnection(process.env.JAWSDB_URL)
 } else {
-  connection = mysql.createConnection({
+  const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
@@ -16,13 +16,7 @@ if (process.env.JAWSDB_URL) {
 
 
 // Makes the connection
-connection.connect((err) => {
-  if (err) {
-    console.log("error conencting: " + err.stack);
-    return;
-  }
-  console.log("connected as id: " + connection.threadId);
-});
+connection.connect();
 
 // Exports for the ORM to use
 module.exports = connection;
